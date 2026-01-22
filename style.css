@@ -1,82 +1,229 @@
-
+/* ========================================
+   리셋 & 기본 설정
+======================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #333; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif !important; }
-li, ul{list-style: none;}
+body { color: #333; font-family: var(--body); overflow-x: hidden; min-width: 320px; -ms-overflow-style: none; scrollbar-width: none;  }
+body::-webkit-scrollbar { display: none; /* Chrome, Safari, Opera */}
+body.menu-open { overflow: hidden;
 
-/* 폰트 */
-@font-face {
-    font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2'); font-weight: 400;}
-
-@font-face {
-    font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2'); font-weight: 700;}
-
-/* 상단 공지 바 */
-.top-notice { background: #000; color: #fff; text-align: center; padding: 10px; font-size: 12px; white-space: nowrap; }
-/* 헤더 */
+}:root { --body: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; --heading: "Libre Bodoni", serif; font-optical-sizing: auto; font-weight: 500; font-style: normal; }
+li, ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+/* ========================================
+   폰트
+======================================== */
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2'); font-weight: 700; }
+/* ========================================
+   상단 공지 바 (모바일)
+======================================== */
+.top-notice { background: #000; color: #fff; text-align: center; padding: 8px 10px; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* ========================================
+   헤더 (모바일)
+======================================== */
 header { background: #fff; border-bottom: 1px solid #e0e0e0; position: sticky; top: 0; z-index: 100; }
-.header-content { max-width: 1200px; margin: 0 auto; padding: 20px 20px; display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 28px; font-weight: bold; font-style: italic; color: #2d5e3f; }
-nav ul { list-style: none; display: flex; gap: 30px; }
-nav a { text-decoration: none; color: #333; font-size: 14px; transition: color 0.3s; }
+.header-content { padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 20px; font-weight: bold; font-style: italic; color: #2d5e3f; z-index: 101; }
+.logo img { height: 24px; width: auto; }
+/* ========================================
+   햄버거 메뉴 (모바일)
+======================================== */
+.hamburger { display: flex; flex-direction: column; justify-content: space-between; width: 28px; height: 22px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 101; position: relative; }
+.hamburger span { display: block; width: 100%; height: 3px; background: #333; border-radius: 3px; transition: all 0.3s ease; }
+.hamburger.active span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
+/* ========================================
+   네비게이션 (모바일)
+======================================== */
+nav { position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px; height: 100vh; background: #fff; padding: 80px 30px 30px; transition: right 0.3s ease; box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1); overflow-y: auto; z-index: 100; }
+nav.active { right: 0; }
+nav ul { display: flex; flex-direction: column; gap: 0; }
+nav ul li { border-bottom: 1px solid #f0f0f0; }
+nav a { display: block; color: #333; font-size: 16px; padding: 15px 0; transition: color 0.3s; }
 nav a:hover { color: #2d5e3f; }
-.header-icons { display: flex; gap: 20px; font-size: 20px; }
-/* 히어로 섹션 */
-.hero { background: url(images/banner.png) no-repeat center/cover; height: 650px; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; position: relative; background-color: #1a1a1a; }
-.hero-content h1 { font-size: 36px; margin-bottom: 20px; line-height: 1.4; }
-.hero-content p { font-size: 16px; opacity: 0.9; }
-/* 카테고리 탭 */
-.category-tabs { max-width: 1200px; margin: 0 auto; padding: 30px 20px; display: flex; gap: 30px; border-bottom: 2px solid #e0e0e0; }
-.category-tabs button { background: none; border: none; font-size: 16px; padding: 10px 0; cursor: pointer; color: #666; position: relative; }
+/* ========================================
+   헤더 아이콘 (모바일)
+======================================== */
+.header-icons { display: none; }
+/* ========================================
+   히어로 섹션 (모바일)
+======================================== */
+.hero { background: url(images/banner.jpg) no-repeat center/cover; min-height: 400px; display: flex; align-items: center; justify-content: start; color: #fff;  position: relative; background-color: #1a1a1a; padding: 40px 20px; }
+.black-o{position: absolute; background-color: #0000006e; top: 0; left: 0; width: 100%; height: 100%;}
+.hero-content{ width: 1300px;  position: absolute;  top: 50%; left: 50%;  transform: translate(-50%,-50%);}
+
+.hero-content h1 { font-size: 24px;  line-height: 1.4; }
+.hero-content p { font-size: 14px; opacity: 0.9; line-height: 1.6; }
+/* ========================================
+   카테고리 탭 (모바일)
+======================================== */
+.category-tabs { padding: 20px 15px; display: flex; gap: 10px; border-bottom: 2px solid #e0e0e0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.category-tabs::-webkit-scrollbar { display: none; }
+.category-tabs button { background: none; border: none; font-size: 14px; padding: 8px 12px; cursor: pointer; color: #666; position: relative; white-space: nowrap; flex-shrink: 0; }
 .category-tabs button.active { color: #2d5e3f; font-weight: bold; }
-.category-tabs button.active::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: #2d5e3f; }
-/* 상품 그리드 */
-.products { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; }
+.category-tabs button.active::after { content: ''; position: absolute; bottom: -20px; left: 0; right: 0; height: 2px; background: #2d5e3f; }
+/* ========================================
+   상품 그리드 (모바일)
+======================================== */
+.products { padding: 30px 15px; }
+.product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
 .product-card { border-radius: 8px; overflow: hidden; transition: transform 0.3s; cursor: pointer; }
-.product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-.product-image { width: 100%; height: 410px;  display: flex; align-items: center; justify-content: center; font-size: 80px; }
-.product-welcome { display: inline-block; background: #000; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11px; margin-bottom: 10px; }
-.product-title { font-size: 14px; color: #333; margin-bottom: 10px; line-height: 1.4; }
-.product-price { font-size: 18px; font-weight: bold; color: #333; }
-.product-price .period { font-size: 12px; font-weight: normal; color: #666; margin-left: 5px; }
-.product-status { display: inline-block; background: #666; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11px; margin-top: 10px; }
-/* 배너 섹션 */
-.banner { max-width: 1200px; margin: 60px auto; padding: 0 20px;  }
-.banner-content { align-items: center; display: flex; justify-content: space-between; background: linear-gradient(135deg, #2d5e3f 0%, #1a3d2a 100%); border-radius: 16px; padding: 48px; color: #fff; position: relative; overflow: hidden; }
-.banner-content h2 { font-size: 14px; opacity: 0.9; }
-.banner-content h3 { font-size: 32px; }
-/* 캠핑지 섹션 */
-.camping-spots { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
-.camping-spots h2 { font-size: 14px; color: #666; margin-bottom: 10px; }
-.camping-spots h3 { font-size: 28px; margin-bottom: 30px; }
-.spots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 20px; }
-.spot-card { border-radius: 12px; overflow: hidden; position: relative; height: 300px; background: #f5f5f5; cursor: pointer; transition: transform 0.3s; }
+.product-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.product-image { width: 100%; aspect-ratio: 1; background: #f5f5f5; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.product-image img { width: 100%; height: 100%; object-fit: cover; }
+.product-info { padding: 12px 8px; }
+.product-welcome { display: inline-block; background: #000; color: #fff; padding: 3px 6px; border-radius: 3px; font-size: 10px; margin-bottom: 8px; }
+.product-title { font-size: 13px; color: #333; margin-bottom: 8px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.product-price { font-size: 16px; font-weight: bold; color: #333; }
+.product-price .period { font-size: 11px; font-weight: normal; color: #666; margin-left: 3px; display: block; margin-top: 4px; }
+.product-status { display: inline-block; background: #666; color: #fff; padding: 3px 6px; border-radius: 3px; font-size: 10px; margin-top: 8px; }
+/* ========================================
+   배너 섹션 (모바일)
+======================================== */
+.banner { margin: 40px 15px; }
+.banner-content { background: linear-gradient(135deg, #2d5e3f 0%, #1a3d2a 100%); border-radius: 12px; padding: 30px 20px; color: #fff; position: relative; overflow: hidden; }
+.banner-content li:first-child { margin-bottom: 20px; }
+.banner-content h2 { font-size: 12px; opacity: 0.9; margin-bottom: 8px; }
+.banner-content h3 { font-size: 20px; line-height: 1.4; }
+.banner-content img { max-width: 100%; height: auto; }
+/* ========================================
+   캠핑지 섹션 (모바일)
+======================================== */
+.camping-spots { margin: 40px 15px; }
+.camping-spots h2 { font-size: 12px; color: #666; margin-bottom: 8px; }
+.camping-spots h3 { font-size: 22px; margin-bottom: 20px; }
+.spots-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+.spot-card { border-radius: 10px; overflow: hidden; position: relative; height: 250px; background: #f5f5f5; cursor: pointer; transition: transform 0.3s; }
+.spot-card img { width: 100%; height: 100%; object-fit: cover; }
 .spot-card:hover { transform: scale(1.02); }
-.spot-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: #fff; }
-.spot-info h4 { font-size: 18px; margin-bottom: 5px; }
-.spot-info p { font-size: 14px; opacity: 0.9; }
-/* 팁 섹션 */
-.tips { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
-.tips-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
-.tip-card { background: #f9f9f9; padding: 12px; border-radius: 12px; display: flex; align-items: center; gap: 20px; }
-.tip-icon { font-size: 60px; }
-.tip-content h4 { font-size: 12px; color: #666; margin-bottom: 5px; }
-.tip-content h3 { font-size: 16px; color: #333; }
-/* 푸터 */
-footer { background: #1a1a1a; color: #fff; padding: 60px 20px 30px; margin-top: 80px; }
-.footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-.footer-logo {  width: auto; height: 50px;  background: url("images/svg/Camply.svg") no-repeat center;  filter: brightness(0) invert(1);}
-.footer-section h4 { font-size: 14px; margin-bottom: 15px; font-weight: 600; }
-.footer-section ul { list-style: none; }
-.footer-section a { color: #999; text-decoration: none; font-size: 13px; line-height: 2; }
-.footer-section a:hover { color: #fff; }
-.footer-contact { font-size: 13px; line-height: 1.8; color: #999; }
-.footer-phone { font-size: 20px; font-weight: bold; color: #fff; margin: 10px 0; }
-.footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 20px; border-top: 1px solid #333; font-size: 12px; color: #666; text-align: center; }
-@media (max-width:768px) {
-	.header-content { flex-direction: column; gap: 20px; }
-	nav ul { flex-wrap: wrap; justify-content: center; }
-	.hero-content h1 { font-size: 24px; }
-	.product-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-	.banner-content { padding: 40px 30px; }
+.spot-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: #fff; }
+.spot-info h4 { font-size: 16px; margin-bottom: 5px; }
+.spot-info p { font-size: 13px; opacity: 0.9; }
+/* ========================================
+   팁 섹션 (모바일)
+======================================== */
+.tips { margin: 40px 15px; }
+.tips-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+.tip-card { background: #f9f9f9; padding: 20px; border-radius: 10px; display: flex; align-items: center; gap: 15px; }
+.tip-icon { font-size: 40px; flex-shrink: 0; }
+.tip-icon img { width: 50px; height: 50px; }
+.tip-content h4 { font-size: 11px; color: #666; margin-bottom: 5px; }
+.tip-content h3 { font-size: 14px; color: #333; line-height: 1.4; }
+/* ========================================
+   푸터 (모바일)
+======================================== */
+footer { background: #1a1a1a; color: #fff; padding: 40px 15px 20px; margin-top: 60px; }
+.footer-content { display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 30px; }
+.info-section { display: flex; flex-direction: column; gap: 15px; }
+.footer-logo { width: 100px; height: 40px; background: url("images/svg/Camply.svg") no-repeat left; background-size: contain; filter: brightness(0) invert(1); }
+.footer-content li { font-size: 12px; color: #C3C3C3; }
+.footer-content li p { margin-bottom: 8px; }
+.footer-content a { color: #999; text-decoration: none; font-size: 13px; line-height: 2; }
+.footer-content a:hover { color: #fff; }
+.footer-phone { font-size: 18px; font-weight: bold; color: #fff; margin: 8px 0; font-family: var(--heading); }
+.footer-phone span { font-size: 12px; font-family: var(--body); font-weight: 300; }
+.qr-section { border-radius: 10px; background-color: #2C2C2C; padding: 20px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; text-align: center; }
+.qr-section p { font-size: 11px; line-height: 1.4; }
+.qr-section img { width: 80px; height: 80px; }
+.footer-bottom { padding-top: 20px; border-top: 1px solid #333; font-size: 11px; color: #666; text-align: center; display: flex; flex-direction: column; gap: 15px; }
+.footer-bottom li:last-child { display: flex; justify-content: center; gap: 15px; }
+.footer-bottom a { color: #999; }
+.footer-bottom a:hover { color: #fff; }
+/* ========================================
+   태블릿 (768px 이상)
+======================================== */
+@media (min-width:768px) {
+	/* 공지 */
+	.top-notice { font-size: 12px; padding: 10px; }
+	/* 헤더 */
+	.header-content { max-width: 1300px; margin: 0 auto; padding: 20px; }
+	.logo img { height: 28px; }
+	/* 햄버거 숨기기 */
+	.hamburger { display: none; }
+	/* 네비게이션 */
+	nav { position: static; width: auto; max-width: none; height: auto; padding: 0; box-shadow: none; overflow-y: visible; }
+	nav ul { flex-direction: row; gap: 25px; }
+	nav ul li { border-bottom: none; }
+	nav a { font-size: 14px; padding: 0; }
+	/* 헤더 아이콘 표시 */
+	.header-icons { display: flex; gap: 15px; font-size: 18px; }
+	.header-icons img { width: 20px; height: 20px; }
+	/* 히어로 */
+	.hero { min-height: 500px; }
+	.hero-content h1 { font-size: 32px; }
+	.hero-content p { font-size: 16px; }
+	/* 카테고리 */
+	.category-tabs { max-width: 1300px; margin: 0 auto; padding: 25px 20px; gap: 25px; }
+	.category-tabs button { font-size: 15px; }
+	/* 상품 */
+	.products { max-width: 1300px; margin: 0 auto; padding: 40px 20px; }
+	.product-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+	.product-title { font-size: 14px; }
+	.product-price { font-size: 17px; }
+	/* 배너 */
+	.banner { max-width: 1300px; margin: 60px auto; padding: 0 20px; }
+	.banner-content { display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 40px; }
+	.banner-content li:first-child { margin-bottom: 0; }
+	.banner-content h2 { font-size: 14px; }
+	.banner-content h3 { font-size: 28px; }
+	/* 캠핑지 */
+	.camping-spots { max-width: 1300px; margin: 60px auto; padding: 0 20px; }
+	.camping-spots h2 { font-size: 14px; }
+	.camping-spots h3 { font-size: 26px; margin-bottom: 25px; }
+	.spots-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+	.spot-card { height: 280px; }
+	/* 팁 */
+	.tips { max-width: 1300px; margin: 60px auto; padding: 0 20px; }
+	.tips-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+	/* 푸터 */
+	footer { padding: 50px 20px 30px; }
+	.footer-content { max-width: 1300px; margin: 0 auto; grid-template-columns: 2fr 1fr 1fr; gap: 30px; }
+	.footer-bottom { max-width: 1300px; margin: 0 auto; flex-direction: row; justify-content: space-between; }
+}
+/* ========================================
+   데스크탑 (1024px 이상)
+======================================== */
+@media (min-width:1024px) {
+	/* 네비게이션 */
+	nav ul { gap: 30px; }
+	/* 히어로 */
+	.hero { min-height: 650px; }
+	.hero-content h1 { font-size: 36px; margin-bottom: 20px; }
+	/* 카테고리 */
+	.category-tabs { padding: 30px 20px; gap: 30px; }
+	.category-tabs button { font-size: 16px; padding: 10px 0; }
+	/* 상품 */
+	.product-grid { grid-template-columns: repeat(4, 1fr); gap: 30px; }
+	.product-image { height: 410px; }
+	.product-info { padding: 15px 10px; }
+	.product-title { font-size: 14px; margin-bottom: 10px; }
+	.product-price { font-size: 18px; }
+	.product-price .period { font-size: 12px; display: inline; margin-top: 0; }
+	/* 배너 */
+	.banner-content { padding: 48px; }
+	.banner-content h3 { font-size: 32px; }
+	/* 캠핑지 */
+	.camping-spots h3 { font-size: 28px; margin-bottom: 30px; }
+	.spots-grid { grid-template-columns: repeat(4, 1fr); }
+	.spot-card { height: 300px; }
+	.spot-info { padding: 30px; }
+	.spot-info h4 { font-size: 18px; }
+	.spot-info p { font-size: 14px; }
+	/* 팁 */
+	.tips-grid { grid-template-columns: repeat(3, 1fr); }
+	.tip-card { padding: 12px; }
+	.tip-icon { font-size: 60px; }
+	.tip-icon img { width: 130px; height: 130px; }
+	.tip-content h4 { font-size: 12px; }
+	.tip-content h3 { font-size: 16px; }
+	/* 푸터 */
+	footer { padding: 60px 20px 30px; margin-top: 80px; }
+	.footer-content { grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr; gap: 40px; }
+	.footer-phone { font-size: 20px; }
+	.footer-phone span { font-size: 13px; }
+	.qr-section { width: 120px; height: 190px; }
+	.qr-section img { width: 100px; height: 100px; }
+	.footer-bottom { margin-top: 40px; font-size: 12px; }
 }

@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camply - 캠핑 장비 공유 플랫폼 수정했습니다</title>
+    <title>Camply - 캠핑 장비 공유 플랫폼</title>
     <link rel="stylesheet" href="style.css">
     <!-- 폰트 -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- 상단 공지 -->
@@ -20,8 +19,16 @@
     <!-- 헤더 -->
     <header>
         <div class="header-content">
-            <div class="logo"><img src="images/svg/Camply.svg" alt=""></div>
-            <nav>
+            <div class="logo"><img src="images/svg/Camply.svg" alt="Camply"></div>
+            
+            <!-- 햄버거 메뉴 버튼 -->
+            <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="nav">
                 <ul>
                     <li><a href="#brand">브랜드 스토리</a></li>
                     <li><a href="#popular">인기품</a></li>
@@ -32,16 +39,18 @@
                     <li><a href="#support">고객지원</a></li>
                 </ul>
             </nav>
+
             <div class="header-icons">
-                <span><img src="images/svg/SVG.svg" alt=""></span>
-                <span><img src="images/svg/SVG (1).svg" alt=""></span>
-                <span><img src="images/svg/SVG (2).svg" alt=""></span>
+                <span><img src="images/svg/SVG.svg" alt="검색"></span>
+                <span><img src="images/svg/SVG (1).svg" alt="장바구니"></span>
+                <span><img src="images/svg/SVG (2).svg" alt="마이페이지"></span>
             </div>
         </div>
     </header>
 
     <!-- 히어로 섹션 -->
     <section class="hero">
+        <ul class="black-o"></ul>
         <ul class="hero-content">
             <li>
                 <h1>캠핑장 장보가 필요하신가요?<br>고민말을 말솜해 보세요!</h1>
@@ -63,7 +72,7 @@
         <ul class="product-grid">
             <!-- 상품 카드 1 -->
             <li class="product-card">
-                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (1).png" alt=""></ul>
+                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (1).png" alt="캠핑 상품"></ul>
                 <ul class="product-info">
                     <span class="product-welcome">NEW</span>
                     <h6 class="product-title">[Welcome 진행] 홈 캠스 렌탈세 렌탈비 + 가방세트 비포 렌탈세터</h6>
@@ -74,7 +83,7 @@
 
             <!-- 상품 카드 2 -->
             <li class="product-card">
-                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (2).png" alt=""></ul>
+                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (2).png" alt="캠핑 상품"></ul>
                 <ul class="product-info">
                     <span class="product-welcome">NEW</span>
                     <h6 class="product-title">[Welcome 진행] 홈 캠스 렌탈세 렌탈비 + 가방세트 비포 렌탈세터</h6>
@@ -85,7 +94,7 @@
 
             <!-- 상품 카드 3 -->
             <li class="product-card">
-                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (3).png" alt=""></ul>
+                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (3).png" alt="캠핑 상품"></ul>
                 <ul class="product-info">
                     <span class="product-welcome">NEW</span>
                     <h6 class="product-title">[Welcome 진행] 홈 캠스 렌탈세 렌탈비 + 가방세트 비포 렌탈세터</h6>
@@ -96,7 +105,7 @@
 
             <!-- 상품 카드 4 -->
             <li class="product-card">
-                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (4).png" alt=""></ul>
+                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (4).png" alt="캠핑 상품"></ul>
                 <ul class="product-info">
                     <span class="product-welcome">NEW</span>
                     <h6 class="product-title">[Welcome 진행] 홈 캠스 렌탈세 렌탈비 + 가방세트 비포 렌탈세터</h6>
@@ -107,7 +116,7 @@
 
             <!-- 상품 카드 5 -->
             <li class="product-card">
-                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (5).png" alt=""></ul>
+                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (5).png" alt="캠핑 상품"></ul>
                 <ul class="product-info">
                     <span class="product-welcome">NEW</span>
                     <h6 class="product-title">[Welcome 진행] 홈 캠스 렌탈세 렌탈비 + 가방세트 비포 렌탈세터</h6>
@@ -118,7 +127,7 @@
 
             <!-- 상품 카드 6 -->
             <li class="product-card">
-                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (6).png" alt=""></ul>
+                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (6).png" alt="캠핑 상품"></ul>
                 <ul class="product-info">
                     <span class="product-welcome">NEW</span>
                     <h6 class="product-title">[Welcome 진행] 홈 캠스 렌탈세 렌탈비 + 가방세트 비포 렌탈세터</h6>
@@ -129,7 +138,7 @@
 
             <!-- 상품 카드 7 -->
             <li class="product-card">
-                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (7).png" alt=""></ul>
+                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (7).png" alt="캠핑 상품"></ul>
                 <ul class="product-info">
                     <span class="product-welcome">NEW</span>
                     <h6 class="product-title">[Welcome 진행] 홈 캠스 렌탈세 렌탈비 + 가방세트 비포 렌탈세터</h6>
@@ -140,7 +149,7 @@
 
             <!-- 상품 카드 8 -->
             <li class="product-card">
-                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (9).png" alt=""></ul>
+                <ul class="product-image"><img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산.png" alt="캠핑 상품"></ul>
                 <ul class="product-info">
                     <span class="product-welcome">NEW</span>
                     <h6 class="product-title">[Welcome 진행] 홈 캠스 렌탈세 렌탈비 + 가방세트 비포 렌탈세터</h6>
@@ -153,13 +162,13 @@
 
     <!-- 배너 섹션 -->
     <section class="banner">
-        <ul class="banner-content "> 
+        <ul class="banner-content"> 
             <li>
                 <h2>캠핑여행의 시작과 끝을</h2>
                 <h3>단순 대여가 아닌 여행 서비스가 되도록</h3>
             </li>
             <li>
-                <img src="images/svg/Frame.svg" alt="">
+                <img src="images/svg/Frame.svg" alt="배너 이미지">
             </li>
         </ul>
     </section>
@@ -169,32 +178,32 @@
         <h2>실전 앞플로 씨다, 캠핑에이</h2>
         <h3>캠핑이 부담 없어지는 날까지</h3>
         <ul class="spots-grid">
-            <li class="spot-card" >
-                <img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (9).png" alt="">
+            <li class="spot-card">
+                <img src="images/trip.png" alt="캠핑지">
                 <ul class="spot-info">
-                    <h4>마스이어</h4>
-                    <p>제3서지 아이등<br>솟올미 2다.zip</p>
-                </ul>
-            </li>
-            <li class="spot-card" >
-                <img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (10).png" alt="">
-                <ul class="spot-info">
-                    <h4>복설일 취소 비의이미아소</h4>
-                    <p>아록도 천산 셀과 클럼</p>
+                    <h4>끝없는 발견</h4>
+                    <p>전통과 미래가 만나는 곳<br>도쿄</p>
                 </ul>
             </li>
             <li class="spot-card">
-                <img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (11).png" alt="">
+                <img src="images/trip1.png" alt="캠핑지">
                 <ul class="spot-info">
-                    <h4>마스이어</h4>
-                    <p>제3서지 아이등<br>솟올미 1다.zip</p>
+                    <h4>영원한 매력</h4>
+                    <p>숨겨진 매력 <br>5개 꽃잎의 연꽃</p>
                 </ul>
             </li>
-            <li class="spot-card" >
-                <img src="images/[Welcome 전용] 젬 소노 테라피 릴리프 + 가볍게 마시는 히알루론산 (8).png" alt="">
+            <li class="spot-card">
+                <img src="images/trip2.png" alt="캠핑지">
                 <ul class="spot-info">
-                    <h4>캠핑 명소</h4>
-                    <p>자연과 함께하는<br>힐링 캠핑</p>
+                    <h4>경이로운 파도</h4>
+                    <p>아시아의 심장 <br>그 뜨거운 중심</p>
+                </ul>
+            </li>
+            <li class="spot-card">
+                <img src="images/trip3.png" alt="캠핑지">
+                <ul class="spot-info">
+                    <h4>당신이 상상했던 그 중국</h4>
+                    <p>전에 없던 중국<br>진짜 상하이를 만나다</p>
                 </ul>
             </li>
         </ul>
@@ -204,21 +213,21 @@
     <section class="tips">
         <ul class="tips-grid">
             <li class="tip-card">
-                <ul class="tip-icon"><img src="images/svg/elite_img_PC 1.svg" alt=""></ul>
+                <ul class="tip-icon"><img src="images/svg/elite_img_PC 1.svg" alt="팁 아이콘"></ul>
                 <ul class="tip-content">
                     <h4>캠핑, 소리 설치 소식</h4>
                     <h3>별모르 양반만! 화의 쓰는 심김 배려</h3>
                 </ul>
             </li>
             <li class="tip-card">
-                <ul class="tip-icon"><img src="images/svg/image 63.svg" alt=""></ul>
+                <ul class="tip-icon"><img src="images/svg/image 63.svg" alt="팁 아이콘"></ul>
                 <ul class="tip-content">
                     <h4>무소 진동 성레 소식</h4>
                     <h3>무림 선배신! 화의 쓰는 새로운 밍밍</h3>
                 </ul>
             </li>
             <li class="tip-card">
-                <ul class="tip-icon"><img src="images/svg/image 64.svg" alt=""></ul>
+                <ul class="tip-icon"><img src="images/svg/image 64.svg" alt="팁 아이콘"></ul>
                 <ul class="tip-content">
                     <h4>인기일 내미이 전반 소식</h4>
                     <h3>한 번 쓰는 장비는 꿀 유료 중고내요</h3>
@@ -230,48 +239,66 @@
     <!-- 푸터 -->
     <footer>
         <ul class="footer-content">
-            <li class="footer-section">
+            <li class="info-section">
                 <p style="color: #999; font-size: 12px; line-height: 1.6;">
-                    (주)아모레퍼시픽  |  대표이사 김승환 주소 서울특별시 용산구 한강대로 100(한강로2가) 사업자 등록번호 106-86-43373 |  통신판매업 신고번호 2017-서울용산-1308  [사업자정보확인] 호스팅제공자 (주)카페24
+                    (주)아모레퍼시픽 | 대표이사 김승환 주소 서울특별시 용산구 한강대로 100(한강로2가) 사업자 등록번호 106-86-43373 | 통신판매업 신고번호 2017-서울용산-1308 [사업자정보확인] 호스팅제공자 (주)카페24
                 </p>
                 <div class="footer-logo"></div>
-
             </li>
-            <li class="footer-section">
-                <h4>고객지원정보</h4>
-                <ul>
-                    <li><a href="#">서비스 소개</a></li>
-                    <li><a href="#">이용문의</a></li>
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="#">제휴문의</a></li>
-                </ul>
+            <li class="support-section"> 
+                <p><a href="#">개인정보처리방침</a></p>
+                <p><a href="#">이용약관</a></p> 
             </li>
-            <li class="footer-section">
-                <h4>이용안내</h4>
-                <ul>
-                    <li><a href="#">회사식</a></li>
-                    <li><a href="#">배송검</a></li>
-                    <li><a href="#">치환로</a></li>
-                    <li><a href="#">금쪽과</a></li>
-                </ul>
+            <li class="menu-section">
+                <p><a href="#">브랜드스토리</a></p>
+                <p><a href="#">SHOP</a></p>
+                <p><a href="#">멤버십</a></p>
+                <p><a href="#">이벤트</a></p>
+                <p><a href="#">고객지원</a></p>
             </li>
-            <li class="footer-section">
-                <ul class="footer-contact">
-                    <h4>고객센터</h4>
-                    <span class="footer-phone">080-804-1010</div>
-                    <span class="footer-phone">080-023-5454</div>
-                    <p>평일 09:00 - 18:00 (점심시간: 13:00-14:00)</p>
-                    <p>주말 및 공휴일은 휴무입니다</p>
-                    <p>이메일: abc@camply.co.kr</p>
-                </ul>
+            <li class="qr-section">
+                <p>makeON 앱과 뷰티 디바이스를 연결해보세요!</p>
+                <img src="images/qrim.png" alt="QR 코드">
+            </li>
+            <li class="cs-section">
+                <h4>고객센터</h4>
+                <h6 class="footer-phone">080-804-1010 <span>쇼핑문의</span></h6>
+                <h6 class="footer-phone">080-023-5454 <span>제품문의</span></h6>
+                <p>평일 09:00 - 18:00 (점심시간: 13:00-14:00)</p>
+                <p>비즈니스 문의 makeonmall@amorepacific.com</p>
             </li>
         </ul>
         <ul class="footer-bottom">
-            <p>&copy; 2024 Camply. All rights reserved.</p>
+            <li>Copyright © makeON. All Rights Reserved.</li>
+            <li>
+                <a href="">Instagram</a>
+                <a href="">Kakao</a>
+                <a href="">Youtube</a>
+            </li>
         </ul>
     </footer>
 
     <script>
+        // 햄버거 메뉴 토글
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            nav.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // 메뉴 링크 클릭시 메뉴 닫기 (모바일)
+        const navLinks = nav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+
         // 상품 카드 클릭 이벤트
         document.querySelectorAll('.product-card').forEach(card => {
             card.addEventListener('click', function() {
