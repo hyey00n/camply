@@ -1,8 +1,17 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #333; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #333; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif !important; }
+li, ul{list-style: none;}
+
+/* 폰트 */
+@font-face {
+    font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2'); font-weight: 400;}
+
+@font-face {
+    font-family: 'Pretendard'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2'); font-weight: 700;}
+
 /* 상단 공지 바 */
-.top-notice { background: #000; color: #fff; text-align: center; padding: 10px; font-size: 12px; }
+.top-notice { background: #000; color: #fff; text-align: center; padding: 10px; font-size: 12px; white-space: nowrap; }
 /* 헤더 */
 header { background: #fff; border-bottom: 1px solid #e0e0e0; position: sticky; top: 0; z-index: 100; }
 .header-content { max-width: 1200px; margin: 0 auto; padding: 20px 20px; display: flex; justify-content: space-between; align-items: center; }
@@ -23,25 +32,24 @@ nav a:hover { color: #2d5e3f; }
 /* 상품 그리드 */
 .products { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
 .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; }
-.product-card { border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+.product-card { border-radius: 8px; overflow: hidden; transition: transform 0.3s; cursor: pointer; }
 .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-.product-image { width: 100%; height: 250px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; font-size: 80px; }
-.product-info { padding: 20px; }
+.product-image { width: 100%; height: 410px;  display: flex; align-items: center; justify-content: center; font-size: 80px; }
 .product-welcome { display: inline-block; background: #000; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11px; margin-bottom: 10px; }
 .product-title { font-size: 14px; color: #333; margin-bottom: 10px; line-height: 1.4; }
 .product-price { font-size: 18px; font-weight: bold; color: #333; }
 .product-price .period { font-size: 12px; font-weight: normal; color: #666; margin-left: 5px; }
 .product-status { display: inline-block; background: #666; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11px; margin-top: 10px; }
 /* 배너 섹션 */
-.banner { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
-.banner-content { background: linear-gradient(135deg, #2d5e3f 0%, #1a3d2a 100%); border-radius: 16px; padding: 60px; color: #fff; position: relative; overflow: hidden; }
-.banner-content h2 { font-size: 14px; margin-bottom: 10px; opacity: 0.9; }
-.banner-content h3 { font-size: 32px; margin-bottom: 20px; }
+.banner { max-width: 1200px; margin: 60px auto; padding: 0 20px;  }
+.banner-content { align-items: center; display: flex; justify-content: space-between; background: linear-gradient(135deg, #2d5e3f 0%, #1a3d2a 100%); border-radius: 16px; padding: 48px; color: #fff; position: relative; overflow: hidden; }
+.banner-content h2 { font-size: 14px; opacity: 0.9; }
+.banner-content h3 { font-size: 32px; }
 /* 캠핑지 섹션 */
 .camping-spots { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
 .camping-spots h2 { font-size: 14px; color: #666; margin-bottom: 10px; }
 .camping-spots h3 { font-size: 28px; margin-bottom: 30px; }
-.spots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.spots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 20px; }
 .spot-card { border-radius: 12px; overflow: hidden; position: relative; height: 300px; background: #f5f5f5; cursor: pointer; transition: transform 0.3s; }
 .spot-card:hover { transform: scale(1.02); }
 .spot-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: #fff; }
@@ -50,14 +58,14 @@ nav a:hover { color: #2d5e3f; }
 /* 팁 섹션 */
 .tips { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
 .tips-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
-.tip-card { background: #f9f9f9; padding: 30px; border-radius: 12px; display: flex; align-items: center; gap: 20px; }
+.tip-card { background: #f9f9f9; padding: 12px; border-radius: 12px; display: flex; align-items: center; gap: 20px; }
 .tip-icon { font-size: 60px; }
 .tip-content h4 { font-size: 12px; color: #666; margin-bottom: 5px; }
 .tip-content h3 { font-size: 16px; color: #333; }
 /* 푸터 */
 footer { background: #1a1a1a; color: #fff; padding: 60px 20px 30px; margin-top: 80px; }
 .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-.footer-logo { font-size: 24px; font-weight: bold; font-style: italic; margin-bottom: 20px; }
+.footer-logo {  width: auto; height: 50px;  background: url("images/svg/Camply.svg") no-repeat center;  filter: brightness(0) invert(1);}
 .footer-section h4 { font-size: 14px; margin-bottom: 15px; font-weight: 600; }
 .footer-section ul { list-style: none; }
 .footer-section a { color: #999; text-decoration: none; font-size: 13px; line-height: 2; }
